@@ -1,0 +1,57 @@
+﻿@model IEnumerable<iCareTPAWebApp.Models.Insurer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.InsurerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegistrationNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HeadOffice)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsurerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegistrationNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HeadOffice)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.InsureId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.InsureId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.InsureId })
+            </td>
+        </tr>
+    }
+    <tr>
+        <td colspan="7">
+            <br />
+            <div class="form-group">
+                <div>
+                    <h5 class="text-danger">@TempData["ErrorMsg"]</h5>
+                    <h5 class="text-success">@TempData["SuccessMsg"]</h5>
+                </div>
+            </div>
+
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,14 @@
+﻿@{
+    string currentController = Convert.ToString(HttpContext.Current.Request.RequestContext.RouteData.Values["Controller"]);
+    string currentAction = Convert.ToString(HttpContext.Current.Request.RequestContext.RouteData.Values["Action"]);
+    //dynamic Layout;
+    if(currentController.Equals("Insurer")||((currentController.Equals("Hospital"))&&(!currentAction.Equals("SearchHospitals"))&& (!currentAction.Equals("SearchHospitalsByPincode"))))
+    {
+        Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+

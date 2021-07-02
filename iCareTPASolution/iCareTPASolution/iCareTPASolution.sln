@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1401
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCareTPADAL", "iCareTPADAL\iCareTPADAL.csproj", "{43B132A2-BB6A-430A-9B48-2ECF3A120501}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCareTPAWebApp", "iCareTPAWebApp\iCareTPAWebApp.csproj", "{5B3A0028-F65E-4E90-80EA-DC4F5A23A43A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43B132A2-BB6A-430A-9B48-2ECF3A120501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43B132A2-BB6A-430A-9B48-2ECF3A120501}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43B132A2-BB6A-430A-9B48-2ECF3A120501}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43B132A2-BB6A-430A-9B48-2ECF3A120501}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B3A0028-F65E-4E90-80EA-DC4F5A23A43A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B3A0028-F65E-4E90-80EA-DC4F5A23A43A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B3A0028-F65E-4E90-80EA-DC4F5A23A43A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B3A0028-F65E-4E90-80EA-DC4F5A23A43A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D009A533-0528-4019-B077-19C5721C18EF}
+	EndGlobalSection
+EndGlobal

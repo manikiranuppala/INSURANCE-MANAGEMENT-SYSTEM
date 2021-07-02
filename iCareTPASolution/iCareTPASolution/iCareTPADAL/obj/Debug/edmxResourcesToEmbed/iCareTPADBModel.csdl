@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="iCareTPADBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Hospital">
+    <Key>
+      <PropertyRef Name="HospitalId" />
+    </Key>
+    <Property Name="HospitalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HospitalName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="State" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Pincode" Type="Int32" Nullable="false" />
+    <Property Name="InsurerId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Insurer" Relationship="Self.FK__Hospitals__Insur__267ABA7A" FromRole="Hospitals" ToRole="Insurers" />
+  </EntityType>
+  <EntityType Name="Insurer">
+    <Key>
+      <PropertyRef Name="InsureId" />
+    </Key>
+    <Property Name="InsureId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InsurerName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RegistrationNo" Type="Int32" />
+    <Property Name="HeadOffice" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Hospitals" Relationship="Self.FK__Hospitals__Insur__267ABA7A" FromRole="Insurers" ToRole="Hospitals" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmailId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Hospitals__Insur__267ABA7A">
+    <End Role="Insurers" Type="Self.Insurer" Multiplicity="1" />
+    <End Role="Hospitals" Type="Self.Hospital" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Insurers">
+        <PropertyRef Name="InsureId" />
+      </Principal>
+      <Dependent Role="Hospitals">
+        <PropertyRef Name="InsurerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="iCareTPADBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Hospitals" EntityType="Self.Hospital" />
+    <EntitySet Name="Insurers" EntityType="Self.Insurer" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK__Hospitals__Insur__267ABA7A" Association="Self.FK__Hospitals__Insur__267ABA7A">
+      <End Role="Insurers" EntitySet="Insurers" />
+      <End Role="Hospitals" EntitySet="Hospitals" />
+    </AssociationSet>
+    <FunctionImport Name="stpFindHospitalByPincode" ReturnType="Collection(iCareTPADBModel.stpFindHospitalByPincode_Result)">
+      <Parameter Name="pincode" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="stpFindHospitalByPincode_Result">
+    <Property Type="Int32" Name="HospitalId" Nullable="false" />
+    <Property Type="String" Name="HospitalName" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="State" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="Pincode" Nullable="false" />
+    <Property Type="Int32" Name="InsurerId" Nullable="false" />
+  </ComplexType>
+</Schema>

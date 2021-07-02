@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="iCareTPADBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Hospitals">
+    <Key>
+      <PropertyRef Name="HospitalId" />
+    </Key>
+    <Property Name="HospitalId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HospitalName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="State" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Pincode" Type="int" Nullable="false" />
+    <Property Name="InsurerId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Insurers">
+    <Key>
+      <PropertyRef Name="InsureId" />
+    </Key>
+    <Property Name="InsureId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InsurerName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="RegistrationNo" Type="int" />
+    <Property Name="HeadOffice" Type="varchar" MaxLength="80" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="EmailId" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Hospitals__Insur__267ABA7A">
+    <End Role="Insurers" Type="Self.Insurers" Multiplicity="1" />
+    <End Role="Hospitals" Type="Self.Hospitals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Insurers">
+        <PropertyRef Name="InsureId" />
+      </Principal>
+      <Dependent Role="Hospitals">
+        <PropertyRef Name="InsurerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="stpFindHospitalByPincode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pincode" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="iCareTPADBModelStoreContainer">
+    <EntitySet Name="Hospitals" EntityType="Self.Hospitals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Insurers" EntityType="Self.Insurers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Hospitals__Insur__267ABA7A" Association="Self.FK__Hospitals__Insur__267ABA7A">
+      <End Role="Insurers" EntitySet="Insurers" />
+      <End Role="Hospitals" EntitySet="Hospitals" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

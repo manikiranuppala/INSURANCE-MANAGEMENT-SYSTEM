@@ -1,0 +1,12 @@
+D:\Projects\CSharpPractice\CaseStudy\iCareTPASolution\iCareTPADAL\bin\Debug\iCareTPADAL.dll.config
+D:\Projects\CSharpPractice\CaseStudy\iCareTPASolution\iCareTPADAL\bin\Debug\iCareTPADAL.dll
+D:\Projects\CSharpPractice\CaseStudy\iCareTPASolution\iCareTPADAL\bin\Debug\iCareTPADAL.pdb
+D:\Projects\CSharpPractice\CaseStudy\iCareTPASolution\iCareTPADAL\bin\Debug\EntityFramework.dll
+D:\Projects\CSharpPractice\CaseStudy\iCareTPASolution\iCareTPADAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\CSharpPractice\CaseStudy\iCareTPASolution\iCareTPADAL\bin\Debug\EntityFramework.xml
+D:\Projects\CSharpPractice\CaseStudy\iCareTPASolution\iCareTPADAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\CSharpPractice\CaseStudy\iCareTPASolution\iCareTPADAL\obj\Debug\iCareTPADAL.csprojAssemblyReference.cache
+D:\Projects\CSharpPractice\CaseStudy\iCareTPASolution\iCareTPADAL\obj\Debug\iCareTPADAL.csproj.CoreCompileInputs.cache
+D:\Projects\CSharpPractice\CaseStudy\iCareTPASolution\iCareTPADAL\obj\Debug\iCareTPADAL.csproj.CopyComplete
+D:\Projects\CSharpPractice\CaseStudy\iCareTPASolution\iCareTPADAL\obj\Debug\iCareTPADAL.dll
+D:\Projects\CSharpPractice\CaseStudy\iCareTPASolution\iCareTPADAL\obj\Debug\iCareTPADAL.pdb

@@ -1,0 +1,43 @@
+﻿@model iCareTPAWebApp.Models.Insurer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Insurer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsurerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsurerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegistrationNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegistrationNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeadOffice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeadOffice)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.InsureId  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
